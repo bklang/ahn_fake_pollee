@@ -22,10 +22,10 @@ Adhearsion::Configuration.configure do |config|
   # config.add_component "ahn_test_component"
 
   # Supported levels (in increasing severity) -- :debug < :info < :warn < :error < :fatal
-  config.logging :level => :info
+  config.logging :level => :debug
 
   # Whether incoming calls be automatically answered. Defaults to true.
-  # config.automatically_answer_incoming_calls = false
+  config.automatically_answer_incoming_calls = false
 
   # Whether the other end hanging up should end the call immediately. Defaults to true.
   # config.end_call_on_hangup = false
@@ -38,7 +38,7 @@ Adhearsion::Configuration.configure do |config|
   # For Asterisk >= 1.6, use ","
   # The delimiter can also be specified in Asterisk's asterisk.conf.
   # This setting applies only to AGI.  The AMI delimiter is auto-detected.
-  config.enable_asterisk :argument_delimiter => '|'
+  config.enable_asterisk :argument_delimiter => ',', :port => 1060
   # config.asterisk.enable_ami :host => "127.0.0.1", :username => "admin", :password => "password", :events => true
 
   # config.enable_drb
